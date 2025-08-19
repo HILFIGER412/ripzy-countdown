@@ -1,90 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ripzy Launch Countdown</title>
-  <style>
-    body {
-      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-      color: #fff;
-      font-family: "Poppins", Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #00bfff; /* Ripzy Blue */
-      text-shadow: 0px 0px 10px rgba(0,191,255,0.6);
-    }
-    #countdown {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #ff69b4; /* Ripzy Pink */
-      text-shadow: 0px 0px 8px rgba(255,105,180,0.6);
-      margin-bottom: 40px;
-    }
-    .logo {
-      margin-top: 40px;
-    }
-    .logo img {
-      max-width: 250px;
-      width: 80%;
-      height: auto;
-      filter: drop-shadow(0px 0px 12px rgba(255,105,180,0.8));
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      #countdown {
-        font-size: 1.5rem;
-      }
-      .logo img {
-        max-width: 180px;
-      }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ripzy Countdown</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>🚀 Ripzy Launch Countdown</h1>
-  <div id="countdown"></div>
-
-  <div class="logo">
-    <img src="ripzy-logo.png" alt="Ripzy Logo">
+  <div class="container">
+    <img src="logo.png" alt="Ripzy Logo" class="logo" />
+    <h1 class="headline">We’re Launching Soon!</h1>
+    <div id="countdown" class="countdown"></div>
   </div>
 
-  <script>
-    // Set your launch date here
-    const targetDate = new Date("Nov 1, 2025 18:00:00 EST").getTime();
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("countdown").innerHTML =
-        `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-      if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "🎉 Ripzy Has Launched!";
-      }
-    }
-
-    setInterval(updateCountdown, 1000);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
+
