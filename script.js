@@ -1,5 +1,5 @@
 // Set your launch date here:
-const countDownDate = new Date("2025-11-01T18:00:00-05:00").getTime(); 
+const launchDate = new Date("2025-11-01T18:00:00-05:00").getTime();
 
 const countdownElement = document.getElementById("countdown");
 
