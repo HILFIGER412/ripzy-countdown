@@ -1,11 +1,11 @@
 // Set your launch date here:
 
 const countdownElement = document.getElementById("countdown");
+  
+const launchDate = new Date("2025-11-01T18:00:00-05:00").getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
-  const launchDate = new Date("2025-11-01T18:00:00-05:00").getTime();
-
   const distance = launchDate - now;
 
   if (distance < 0) {
